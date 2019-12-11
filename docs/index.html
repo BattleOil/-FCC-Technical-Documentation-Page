@@ -8,7 +8,269 @@
     </head>
 
     <body>
+        <main id="main-doc">
+            <section class="main-section" id="What_is_a_Progressive_Web_App?">
+                <header>What is a Progressive Web App?</header>
+                <article>
+                    <p>PWAs are web apps developed using a number of specific technologies and standard patterns to allow them to take advantage of both web and native app features.</p>
+                    <p>For example, web apps are more discoverable — it's a lot easier and faster to visit a website than install an application, and you can also share web apps via a link.</p>
+                    <p>On the other hand, native apps are better integrated with the operating system and therefore offer a more seamless experience for the users. You can install a native app so that it works offline, and users love tapping their homescreen icons to easily access their favorite apps, rather than navigating to it using a browser.</p>
+                    <p>PWAs give us the ability to create web apps that can enjoy these same advantages.</p>
+                    <p>It's not a brand new concept — such ideas have been revisited many times on the web platform with various approaches in the past. Progressive Enhancement and responsive design already allow us to build mobile friendly websites. Working offline and installing apps was possible in the Firefox OS ecosystem a few years ago.</p>
+                    <p>PWAs, however, provide all this and more, without getting rid of any of the existing features that make the web great.</p>
+                    </article>
+            </section>
+            <section class="main-section" id="What_makes_an_app_a_PWA?">
+                <header>What makes an app a PWA?</header>
+                <article>
+                    <p>As we hinted at above, PWAs are not created with a single technology. They represent a new philosophy for building web apps, involving some specific patterns, APIs, and other features. It's not that obvious if a web app is a PWA or not from first glance. An app could be considered a PWA when it meets certain requirements, or implements a set of given features: works offline, is installable, is easy to synchronize, can send push notifications, etc.</p>
+                    <p>In addition, there are tools to measure the completeness of an app in percentages. (Lighthouse is currently the most popular one.) By implementing various technological advantages, we can make an app more progressive, thus ending up with a higher Lighthouse score. But this is only a rough indicator.</p>
+                    <p>There are some key principles a web app should try to observe to be identified as a PWA. It should be:</p>
+                    <ul>
+                        <li>Discoverable, so the contents can be found through search engines.</li>
+                        <li>Installable, so it's available on the device's home screen.</li>
+                        <li>Linkable, so you can share it by simply sending a URL.</li>
+                        <li>Network independent, so it works offline or with a poor network connection.</li>
+                        <li>Progressive, so it's still usable on a basic level on older browsers, but fully-functional on the latest ones.</li>
+                        <li>Re-engageable, so it's able to send notifications whenever there's new content available.</li>
+                        <li>Responsive, so it's usable on any device with a screen and a browser — mobile phones, tablets, laptops, TVs, fridges, etc.</li>
+                        <li>Safe, so the connection between you and the app is secured against any third parties trying to get access to your sensitive data.</li>
+                    </ul>
+                    <h3>Is it worth doing all that?</h3>
+                    <p>Absolutely! With a relatively small amount of effort required to implement the core PWA features, the benefits are huge. For example:</p>
+                    <ul>
+                        <li>A decrease in loading times after the app has been installed, thanks to caching with Service Workers, along with saving precious bandwidth and time. PWAs have near-instantaneous loading (from the second visit).</li>
+                        <li>The ability to update only the content that has changed when an app update is available. In contrast, with a native app, even the slightest modification can force the user to download the entire application again.</li>
+                        <li>A look and feel that is more integrated with the native platform — app icons on the homescreen, apps that run fullscreen, etc.</li>
+                        <li>Re-engaging with users via system notifications and push messages, leading to more engaged users and better conversion rates.</li>
+                    </ul>
+                    <p>There are many success stories of companies trying the PWA route, opting for an enhanced website experience rather than a native app, and seeing significant measurable benefits as a result. The website PWA Stats shares many case studies that indicate these benefits.</p>
+                    <p>The best-known success story is probably Flipkart Lite — India's largest e-commerce site rebuilt as a progressive web app in 2015, which resulted in 70% increase in conversions. The AliExpress PWA has also seen much better results than the web or native app, with a 104% increase in conversion rates for new users. Given their profit increase, and the relatively low amount of work required for the conversion to PWAs, the advantage is clear.</p>
+                    <p>Early stage emerging startups like couponmoto have also started using progressive web apps to drive more consumer engagement, showing that they can help small as well as big companies to (re-)engage users more effectively.</p>
+                    <p>You can check the list at pwa.rocks for more examples. Particularly worth mentioning is the hnpwa.com page — this lists an example implementation of the Hacker News website (instead of the usual TodoMVC app), in which you can see the use of various front-end frameworks.</p>
+                    <p>You can even generate PWAs online using the PWABuilder website.</p>
+                    <p>For service worker- and push- specific information, be sure to check the Service Worker Cookbook, a collection of recipes using service workers in modern sites.</p>
+                    <p>It's well worth trying out a PWA approach, so you can see for yourself if it works for your app.</p>
+                </article>
+            </section>
+            <section class="main-section" id="Browser_support">
+                <header>Browser support</header>
+                <article>
+                <p>As mentioned before, PWAs don't depend on a single API, but rather using various technologies to achieve the goal of delivering the best web experience possible.</p>
+                <p>The key ingredient required for PWAs is service worker support. Thankfully service workers are now supported on all major browsers on desktop and mobile.</p>
+                <p>Other features such as Web App Manifest, Push, Notifications, and Add to Home Screen functionality have wide support too. Currently, Safari has limited support for Web App Manifest and Add to Home Screen and no support for web push notifications. However, other major browsers support all these features.</p>
+                <p>Some of these APIs are experimental, with the documentation still in draft, but seeing success stories like those of Flipkart and AliExpress should convince you to try and implement some of the PWA features in your web app already.</p>
+                <p>Above all you should follow the progressive enhancement rule — use the technologies that provide such enhancements only where they are supported, but still offer the basic functionality of your app if it isn't. This way everybody will be able to use it, but those with modern browsers will benefit from PWA features even more.</p>
+                </article>
+            </section>
+            <section class="main-section" id="An_example_application">
+                <header>An example application</hearder>
+                <article>
+                <p>In this series of articles we will examine the source code of a super simple website that lists information about games submitted to the A-Frame category in the js13kGames 2017 competition. You don't have to think about what the actual content on the website is — the main point is to learn how to use PWA features in your own projects.</p>
+                <p>You can find the online version at <a href="mdn.github.io/pwa-examples/js13kpwa" title="js13kGames A-Frame entries">mdn.github.io/pwa-examples/js13kpwa</a> (also see the source code), which we will be carefully explaining in the next few articles.</p>
+                </article>
+            </section>
+            <section class="main-section" id="Structure_of_our_example_application">
+                <header>Structure of our example application</header>
+                <p>The js13kPWA website structure is quite simple: it consists of a single HTML file (index.html) with basic CSS styling (style.css), and a few images, scripts, and fonts. The folder structure looks like this:</p>
+                <img alt="Folder structure of js13kPWA." src="https://mdn.mozillademos.org/files/15925/js13kpwa-directory.png" style="border-style: solid; border-width: 1px; display: block; height: 356px; margin: 0px auto; width: 320px;">
+                 <h3>The HTML</h3>
+                 <p>From the HTML point of view, the app shell is everything outside the content section:</p>
+                <code>
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="utf-8">
+                        <title>js13kGames A-Frame entries</title>
+                        <meta name="description" content="A list of A-Frame entries submitted to the js13kGames 2017 competition, used as an example for the MDN articles about Progressive Web Apps.">
+                        <meta name="author" content="end3r">
+                        <meta name="theme-color" content="#B12A34">
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <meta property="og:image" content="icons/icon-512.png">
+                        <link rel="shortcut icon" href="favicon.ico">
+                        <link rel="stylesheet" href="style.css">
+                        <link rel="manifest" href="js13kpwa.webmanifest">
+                        <script src="data/games.js" defer></script>
+                        <script src="app.js" defer></script>
+                    </head>
+                    <body>
+                    <header>
+                        <p><a class="logo" href="http://js13kgames.com"><img src="img/js13kgames.png" alt="js13kGames"></a></p>
+                    </header>
+                    <main>
+                        <h1>js13kGames A-Frame entries</h1>
+                        <p class="description">List of games submitted to the <a href="http://js13kgames.com/aframe">A-Frame category</a> in the <a href="http://2017.js13kgames.com">js13kGames 2017</a> competition. You can <a href="https://github.com/mdn/pwa-examples/blob/master/js13kpwa">fork js13kPWA on GitHub</a> to check its source code.</p>
+                        <button id="notifications">Request dummy notifications</button>
+                        <section id="content">
+                            // Content inserted in here
+                        </section>
+                    </main>
+                    <footer>
+                        <p>© js13kGames 2012-2018, created and maintained by <a href="http://end3r.com">Andrzej Mazur</a> from <a href="http://enclavegames.com">Enclave Games</a>.</p>
+                    </footer>
+                    </body>
+                    </html>
+                </code>
+                <p>The <head> section contains some basic info like title, description and links to CSS, web manifest, games content JS file, and app.js — that's where our JavaScript application is initialized. The <body> is split into the <header> (containing linked image), <main> page (with title, description and place for a content), and <footer> (copy and links).</p>
+                <p>The app's only job is to list all the A-Frame entries from the js13kGames 2017 competition. As you can see it is a very ordinary, one page website — the point is to have something simple so we can focus on the implementation of the actual PWA features.</p>
+                <h3>The CSS</h3>
+                <p>The CSS is also as plain as possible: it uses @font-face to load and use a custom font, and it applies some simple styling of the HTML elements. The overall approach is to have the design look good on both mobile (with a responsive web design approach) and desktop devices.</p>
+                <h3>The main app JavaScript</h3>
+                <p>The app.js file does a few things we will look into closely in the next articles. First of all it generates the content based on this template:</p>
+                <code>
+                    var template = "<article>\n\
+                        <img src='data/img/SLUG.jpg' alt='NAME'>\n\
+                        <h3>#POS. NAME</h3>\n\
+                        <ul>\n\
+                        <li><span>Author:</span> <strong>AUTHOR</strong></li>\n\
+                        <li><span>Twitter:</span> <a href='https://twitter.com/TWITTER'>@TWITTER</a></li>\n\
+                        <li><span>Website:</span> <a href='http://WEBSITE/'>WEBSITE</a></li>\n\
+                        <li><span>GitHub:</span> <a href='https://GITHUB'>GITHUB</a></li>\n\
+                        <li><span>More:</span> <a href='http://js13kgames.com/entries/SLUG'>js13kgames.com/entries/SLUG</a></li>\n\
+                        </ul>\n\
+                    </article>";
+                    var content = '';
+                    for(var i=0; i<games.length; i++) {
+                        var entry = template.replace(/POS/g,(i+1))
+                            .replace(/SLUG/g,games[i].slug)
+                            .replace(/NAME/g,games[i].name)
+                            .replace(/AUTHOR/g,games[i].author)
+                            .replace(/TWITTER/g,games[i].twitter)
+                            .replace(/WEBSITE/g,games[i].website)
+                            .replace(/GITHUB/g,games[i].github);
+                        entry = entry.replace('<a href=\'http:///\'></a>','-');
+                        content += entry;
+                    };
+                    document.getElementById('content').innerHTML = content;
+                    </code>
+                    <p>Next, it registers a service worker:</p>
+                    <code>
+                    if('serviceWorker' in navigator) {
+                        navigator.serviceWorker.register('/pwa-examples/js13kpwa/sw.js');
+                    };
+                    </code>
+                    <p>The next code block requests permission for notifications when a button is clicked:</p>
+                    <code>
+                    var button = document.getElementById("notifications");
+                    button.addEventListener('click', function(e) {
+                        Notification.requestPermission().then(function(result) {
+                            if(result === 'granted') {
+                                randomNotification();
+                            }
+                        });
+                    });
+                    </code>
+                <p>The last block creates notifications that display a randomly-selected item from the games list:</p>
+                <code>
+                function randomNotification() {
+                    var randomItem = Math.floor(Math.random()*games.length);
+                    var notifTitle = games[randomItem].name;
+                    var notifBody = 'Created by '+games[randomItem].author+'.';
+                    var notifImg = 'data/img/'+games[randomItem].slug+'.jpg';
+                    var options = {
+                        body: notifBody,
+                        icon: notifImg
+                    }
+                    var notif = new Notification(notifTitle, options);
+                    setTimeout(randomNotification, 30000);
+                }
+                </code>
+                    <h3>The service worker</h3>
+                <p>The last file we will quickly look at is the service worker: sw.js — it first imports data from the games.js file:</p>
 
-
+                    <code>self.importScripts('data/games.js');</code>
+                <p>Next, it creates a list of all the files to be cached, both from the app shell and the content:</p>
+                <code>
+                var cacheName = 'js13kPWA-v1';
+                var appShellFiles = [
+                  '/pwa-examples/js13kpwa/',
+                  '/pwa-examples/js13kpwa/index.html',
+                  '/pwa-examples/js13kpwa/app.js',
+                  '/pwa-examples/js13kpwa/style.css',
+                  '/pwa-examples/js13kpwa/fonts/graduate.eot',
+                  '/pwa-examples/js13kpwa/fonts/graduate.ttf',
+                  '/pwa-examples/js13kpwa/fonts/graduate.woff',
+                  '/pwa-examples/js13kpwa/favicon.ico',
+                  '/pwa-examples/js13kpwa/img/js13kgames.png',
+                  '/pwa-examples/js13kpwa/img/bg.png',
+                  '/pwa-examples/js13kpwa/icons/icon-32.png',
+                  '/pwa-examples/js13kpwa/icons/icon-64.png',
+                  '/pwa-examples/js13kpwa/icons/icon-96.png',
+                  '/pwa-examples/js13kpwa/icons/icon-128.png',
+                  '/pwa-examples/js13kpwa/icons/icon-168.png',
+                  '/pwa-examples/js13kpwa/icons/icon-192.png',
+                  '/pwa-examples/js13kpwa/icons/icon-256.png',
+                  '/pwa-examples/js13kpwa/icons/icon-512.png'
+                ];
+                var gamesImages = [];
+                for(var i=0; i<games.length; i++) {
+                  gamesImages.push('data/img/'+games[i].slug+'.jpg');
+                }
+                var contentToCache = appShellFiles.concat(gamesImages);
+                                             </code>
+                <p>The next block installs the service worker, which then actually caches all the files contained in the above list:<p>
+                    <code>
+                self.addEventListener('install', function(e) {
+                  console.log('[Service Worker] Install');
+                  e.waitUntil(
+                    caches.open(cacheName).then(function(cache) {
+                      console.log('[Service Worker] Caching all: app shell and content');
+                      return cache.addAll(contentToCache);
+                    })
+                  );
+                });
+                        <code>
+                <p>Last of all, the service worker fetches content from the cache if it is available there, providing offline functionality:</p>
+<code>
+                self.addEventListener('fetch', function(e) {
+                  e.respondWith(
+                    caches.match(e.request).then(function(r) {
+                      console.log('[Service Worker] Fetching resource: '+e.request.url);
+                      return r || fetch(e.request).then(function(response) {
+                        return caches.open(cacheName).then(function(cache) {
+                          console.log('[Service Worker] Caching new resource: '+e.request.url);
+                          cache.put(e.request, response.clone());
+                          return response;
+                        });
+                      });
+                    })
+                  );
+                });
+                            </code>
+                <h3>The JavaScript data</h3>
+                <p>The games data is present in the data folder in a form of a JavaScript object (games.js):</p>
+                            <code>
+                var games = [
+                    {
+                        slug: 'lost-in-cyberspace',
+                        name: 'Lost in Cyberspace',
+                        author: 'Zosia and Bartek',
+                        twitter: 'bartaz',
+                        website: '',
+                        github: 'github.com/bartaz/lost-in-cyberspace'
+                    },
+                    {
+                        slug: 'vernissage',
+                        name: 'Vernissage',
+                        author: 'Platane',
+                        twitter: 'platane_',
+                        website: 'github.com/Platane',
+                        github: 'github.com/Platane/js13k-2017'
+                    },
+                // ...
+                    {
+                        slug: 'emma-3d',
+                        name: 'Emma-3D',
+                        author: 'Prateek Roushan',
+                        twitter: '',
+                        website: '',
+                        github: 'github.com/coderprateek/Emma-3D'
+                    }
+                ];
+                            </code>
+                <p>Every entry has its own image in the data/img folder. This is our content, loaded into the content section with JavaScript.</p>
+                            </article>
+                        </section>
+        </main>
     </body>
 </html>
