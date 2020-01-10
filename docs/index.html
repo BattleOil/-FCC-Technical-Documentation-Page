@@ -6,6 +6,9 @@
         <!--same below-->
         <link rel="shortcut icon" href="https://battleoil.github.io/images/icon/favicon.png">
         <style>
+                body{
+                        front-family:SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif,Microsoft YaHei UI;
+                }
                 #navbar{
                     float: left;
                     height: 100%;
@@ -13,7 +16,8 @@
                     min-width: 230px;
                     left: 0px;
                     top: 0px;
-                    width: 250px;      
+                    width: 250px;
+                    border-right: 3px solid #808080;
                 }
                 #main-doc{
                   position: absolute;
@@ -22,6 +26,70 @@
                 .topic{
                         font-size:24px;
                         color:#297EFF;
+                        padding: 15px;
+                }
+                nav ul{
+                        list-style: none;
+                        padding: 0px;
+                        margin:0px;
+                }
+                nav ul li{
+                        border-top: 1px solid #C0C0C0;
+                }
+                a.nav-link {
+                    font-size: 16px;
+                    list-style: none;
+                    text-decoration: none;
+                    color: #303030;
+                    padding: 15px;
+                    display: block;
+                }
+                a.nav-link:hover {
+                    color: #FFF;
+                    background: #303030;
+                    transition: ease-in-out 0.5s;
+                }
+                .main-section header {
+                    font-size: 22px;
+                    font-weight: bold;
+                    background: #82BAFF;
+                    width: fit-content;
+                    padding: 5px;
+                }
+                .main-section b {
+                    font-size: 18px;
+                    font-weight: bold;
+                    background: #82BAFF;
+                    width: fit-content;
+                    padding: 5px;
+                }
+                @media(max-width:700px){
+                        nav ul{
+                                list-style: none;
+                                    padding: 0px;
+                                    overflow: scroll;
+                                    height: 135px;
+                                    width: 320px;
+                                    margin: 0 auto;
+                                    border: 2px solid;
+                                    border-bottom: 0px;
+                        }
+                        #navbar {
+                            position: fixed;
+                            max-height: 200px;
+                            scroll-behavior: smooth;
+                            background-color: #FFF;
+                            border-bottom: 3px solid;
+                            width: 100%;
+                            left: 0;
+                            top: 0;
+                            z-index: 1;
+                        }
+                        #main-doc {
+                            position: absolute;
+                            scroll-behavior: smooth;
+                            margin-top: 200px;
+                        }
                 }
         </style>
     </head>
